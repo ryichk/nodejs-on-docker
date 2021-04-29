@@ -3,8 +3,7 @@
 ## Set Up and Start Project
 
 ```docker
-$ docker build . -t nodejs-on-docker
-$ docker run -p 49160:8080 -d nodejs-on-docker
+$ docker-compose up -d
 ```
 
 コンテナに入る
@@ -16,8 +15,8 @@ $ docker exec -it nodejs-on-docker /bin/bash
 Test
 
 ```
-$ docker ps
-$ curl -i localhost:49160
+$ docker-compose ps
+$ curl -i localhost:8080
 ```
 
 ## References

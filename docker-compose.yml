@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  nodejs:
+    container_name: nodejs-on-docker
+    tty: true
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - '8080:8080'
+    command: bash -c 'yarn && yarn start'
