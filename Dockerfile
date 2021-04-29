@@ -1,9 +1,13 @@
 FROM node:latest
 
-WORKDIR /home/app
-USER node
-ENV PORT 3000
+WORKDIR /usr/src/app
 
-EXPOSE 3000
+COPY package.json ./
+COPY yarn.lock ./
 
-ENTRYPOINT /bin/bash
+RUN yarn
+
+COPY . .
+
+EXPOSE 8080
+CMD [ "yarn", "start"]
